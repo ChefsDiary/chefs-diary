@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
+import { logIn } from "@/actions/auth/auth";
 import Form from "@/components/shared/form/Form";
 import FormHeading from "@/components/shared/form/FormHeading";
-import PasswordInput from "@/components/shared/password-input/PasswordInput";
-import SubmitButton from "@/components/shared/submit-button/SubmitButton";
+import PasswordInput from "@/components/shared/passwordInput/PasswordInput";
+import SubmitButton from "@/components/shared/submitButton/SubmitButton";
 import { Checkbox, Input } from "@heroui/react";
 import { Tooltip } from "@heroui/tooltip";
 
@@ -24,7 +25,7 @@ export default function LoginForm() {
       <div className="flex flex-col items-center">
         <FormHeading>Přihlášení</FormHeading>
 
-        <Form className="flex flex-col items-center" noValidate>
+        <Form className="flex flex-col items-center" noValidate action={logIn}>
           <Input
             ref={refLogin}
             name="login"

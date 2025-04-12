@@ -1,5 +1,5 @@
-import CardBody from "@/components/shared/card-body/CardBody";
 import Card from "@/components/shared/card/Card";
+import CardBody from "@/components/shared/cardBody/CardBody";
 
 import LayoutLoginContent from "./content/LayoutLoginContent";
 import LayoutLoginInfo from "./info/LayoutLoginInfo";
@@ -7,7 +7,7 @@ import LayoutLoginInfo from "./info/LayoutLoginInfo";
 type Props = {
   children: React.ReactNode;
 };
-
+// TODO: D8t do app
 export default function AuthLayout({ children }: Props) {
   return (
     <main className="h-full">

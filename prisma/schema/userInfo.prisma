@@ -1,11 +1,9 @@
 model UserInfo {
-  IdUserInfo Int       @id @default(autoincrement()) @map("idUserInfo") @db.Integer
-  IdUser     Int       @unique @map("idUser") @db.Integer
-  User       User      @relation(fields: [IdUser], references: [IdUser])
-  FirstName  String?   @map("firstName") @db.VarChar(25)
-  LastName   String?   @map("lastName") @db.VarChar(25)
-  Email      String    @map("email") @db.VarChar(50)
-  Phone      String?   @map("phone") @db.VarChar(25)
-  CreatedAt  DateTime? @default(now()) @map("createdAt") @db.Timestamp(0)
-  VerifiedAt DateTime? @map("verifiedAt") @db.Timestamp(0)
+  IdUserInfo Int     @id @default(autoincrement()) @map("idUserInfo") @db.Integer
+  IdUser     String  @unique @map("idUser") @db.VarChar(25)
+  User       User    @relation(fields: [IdUser], references: [IdUser])
+  FirstName  String? @map("firstName") @db.VarChar(25)
+  LastName   String? @map("lastName") @db.VarChar(25)
+
+  Phone String? @unique @map("phone") @db.VarChar(25)
 }

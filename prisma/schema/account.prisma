@@ -1,0 +1,20 @@
+model Account {
+  IdUser            String  @map("userId") @db.VarChar(25)
+  Type              String  @map("type") @db.VarChar(25)
+  Provider          String  @map("provider") @db.VarChar(25)
+  IdProviderAccount String  @map("providerAccountId") @db.VarChar(25)
+  RefreshToken      String? @map("refresh_token") @db.VarChar(255)
+  AccessToken       String? @map("access_token") @db.VarChar(255)
+  ExpiresAt         Int?    @map("expires_at") @db.Integer
+  TokenType         String? @map("token_type") @db.VarChar(255)
+  Scope             String? @map("scope") @db.VarChar(255)
+  IdToken           String? @map("id_token") @db.VarChar(255)
+  SessionState      String? @map("session_state") @db.VarChar(255)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [IdUser], references: [IdUser], onDelete: Cascade)
+
+  @@id([Provider, IdProviderAccount])
+}

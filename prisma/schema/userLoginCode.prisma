@@ -1,8 +1,0 @@
-model UserLoginCode {
-  IdUserLoginCode Int      @id @default(autoincrement()) @map("idUserLoginCode") @db.Integer
-  Code            String   @unique @map("code") @db.VarChar(6)
-  IsUsed          Boolean  @default(false) @map("isUsed")
-  ExpireAt        DateTime @db.Timestamp(0)
-  IdUser          Int      @unique @map("idUser") @db.Integer
-  User            User     @relation(fields: [IdUser], references: [IdUser])
-}

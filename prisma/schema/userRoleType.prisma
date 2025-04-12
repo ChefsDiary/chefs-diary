@@ -4,5 +4,3 @@ model UserRoleType {
   Value          Int    @unique @map("value") @db.SmallInt
   Description    String @map("description") @db.VarChar(20)
 }
-
-// TODO: Nějak vložit hodnoty do tabulky

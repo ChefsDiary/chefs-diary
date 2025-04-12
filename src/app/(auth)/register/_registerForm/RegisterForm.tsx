@@ -1,15 +1,14 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef } from "react";
 
+import ConfirmPassword from "@/components/shared/confirmPassword/ConfirmPassword";
 import Form from "@/components/shared/form/Form";
 import FormHeading from "@/components/shared/form/FormHeading";
-import PasswordInput from "@/components/shared/passwordInput/PasswordInput";
-import { Button, Checkbox, Input } from "@heroui/react";
-import { Tooltip } from "@heroui/tooltip";
+import SubmitButton from "@/components/shared/submitButton/SubmitButton";
+import { Checkbox, Input } from "@heroui/react";
 
-export default function LoginForm() {
+export default function RegisterForm() {
   // References
   const refLogin = useRef<HTMLInputElement>(null);
   //   const refErrorMessage = useRef<HTMLParagraphElement>(null);
@@ -21,9 +20,9 @@ export default function LoginForm() {
   return (
     <section>
       <div className="flex flex-col items-center">
-        <FormHeading>Přihlášení</FormHeading>
+        <FormHeading>Registrace</FormHeading>
 
-        <Form className="flex flex-col items-center">
+        <Form className="flex flex-col items-center" noValidate>
           <Input
             ref={refLogin}
             name="login"
@@ -32,37 +31,35 @@ export default function LoginForm() {
             required
             // error={false}
             // helperText={""}
-            autoComplete="username"
+            autoComplete="off"
             fullWidth
             variant="faded"
             color="primary"
           />
 
-          <PasswordInput
-            name="password"
-            label="Heslo"
+          <Input
+            name="email"
+            label="Email"
+            type="email"
             className="mb-4"
             required
             // error={false}
             // helperText={""}
-            autoComplete="current-password"
+            autoComplete="email"
             fullWidth
             variant="faded"
             color="primary"
           />
 
-          <div className="flex items-center justify-between w-full mb-4">
-            <Tooltip content="Odškrtněte, pokud jste na veřejném počítači">
-              <Checkbox name="persistLogin">Zůstat přihlášený</Checkbox>
-            </Tooltip>
-            <p>
-              <Link href={"#"}>Zapomněli jste heslo?</Link>
-            </p>
-          </div>
+          <ConfirmPassword className="mb-4" />
 
-          <Button fullWidth color="primary">
-            Přihlásit
-          </Button>
+          <Checkbox name="termsAgreement" className="mb-4">
+            Souhlasím s podmínkami použití a ochranou osobních údajů
+          </Checkbox>
+
+          <SubmitButton fullWidth color="primary">
+            Registrovat
+          </SubmitButton>
         </Form>
       </div>
     </section>

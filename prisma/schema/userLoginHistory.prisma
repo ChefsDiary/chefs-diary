@@ -1,6 +1,6 @@
 model UserLoginHistory {
   IdUserLogHistory Int      @id @default(autoincrement()) @map("idUserLogHistory") @db.Integer
-  IdUser           Int      @unique @map("idUser") @db.Integer
+  IdUser           String   @unique @map("idUser") @db.VarChar(25)
   User             User     @relation(fields: [IdUser], references: [IdUser])
   LoginAttemptDate DateTime @default(now()) @map("loginAttemptDate") @db.Timestamp(0)
   LoginSuccessful  Boolean  @default(false) @map("loginSuccessful")

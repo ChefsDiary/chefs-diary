@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
 
-import { fontSans } from "@/config/fonts";
+import { fontSans } from "@/config/app/fonts";
 import { mergeStyles } from "@/lib/utils/styles";
 
 import { Providers } from "./providers";
