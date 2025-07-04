@@ -33,6 +33,12 @@ jobs:
       - name: Vygenerování Prisma klienta
         run: npx prisma generate
 
+      - name: Debug versions
+        run: |
+          node --version
+          npm --version
+          npx prisma --version
+
       # - name: Spuštění testů
       # run: pnpm test --passWithNoTests
 
