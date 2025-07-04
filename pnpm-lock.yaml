@@ -124,7 +124,7 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@22.15.19)(typescript@5.8.3)
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.8.3
         version: 5.8.3
       use-debounce:
         specifier: ^10.0.4

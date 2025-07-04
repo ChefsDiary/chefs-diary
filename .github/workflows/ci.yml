@@ -39,6 +39,11 @@ jobs:
           npm --version
           npx prisma --version
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.9"
+
       # - name: Spuštění testů
       # run: pnpm test --passWithNoTests
 
