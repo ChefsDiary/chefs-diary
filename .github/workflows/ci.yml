@@ -30,8 +30,8 @@ jobs:
       - name: Spuštění linteru
         run: pnpm lint
 
-      - name: Spuštění testů
-        # run: pnpm test --passWithNoTests
+      # - name: Spuštění testů
+      # run: pnpm test --passWithNoTests
 
       - name: Build projektu
         run: pnpm build
