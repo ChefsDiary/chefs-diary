@@ -22,9 +22,9 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const message = `
-Děkujeme za nahlášení! 🎉
+            Děkujeme za nahlášení! 🎉
 
-Tato issue byla uzavřena jako **vyřešená**. Pokud problém přetrvává nebo se znovu objeví, neváhejte issue znovu otevřít nebo vytvořit novou.
+            Tato issue byla uzavřena jako **vyřešená**. Pokud problém přetrvává nebo se znovu objeví, neváhejte issue znovu otevřít nebo vytvořit novou.
             `;
             await github.rest.issues.createComment({
               owner,
