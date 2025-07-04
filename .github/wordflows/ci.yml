@@ -1,24 +1,37 @@
 name: Kontrola kódu
 
 on:
-  pull_request:
   push:
+  pull_request:
 
 jobs:
   test:
+    name: Test + Lint + Build
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - name: Checkout kódu
+        uses: actions/checkout@v4
+
+      - name: Nastavení pnpm
+        uses: pnpm/action-setup@v4
         with:
           version: 8
-      - uses: actions/setup-node@v4
+
+      - name: Nastavení Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "pnpm"
 
-      - run: pnpm install
-      - run: pnpm lint
-      # - run: pnpm test --passWithNoTests
-      - run: pnpm build
+      - name: Instalace závislostí
+        run: pnpm install
+
+      - name: Spuštění linteru
+        run: pnpm lint
+
+      - name: Spuštění testů
+        # run: pnpm test --passWithNoTests
+
+      - name: Build projektu
+        run: pnpm build
