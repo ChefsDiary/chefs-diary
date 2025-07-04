@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack --experimental-https",
+    "build": "next build",
     "build:devel": "npx dotenv-cli -e .env.development next build",
     "build:prod": "npx dotenv-cli -e .env.prod next build",
     "start": "next start",
