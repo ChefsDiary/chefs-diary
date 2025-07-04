@@ -4,7 +4,7 @@ export type UnitGroupsWithAssignmentsDTO = Pick<
   UnitGroup,
   "idUnitGroup" | "name"
 > & {
-  baseUnit: Unit | null;
+  baseUnit: Pick<Unit, "idUnit" | "name"> | null;
   unitGroupUnit: (Pick<UnitGroupUnit, "isBaseUnit" | "idUnit"> & {
     unit: Pick<Unit, "name">;
   })[];
