@@ -17,4 +17,4 @@ export type UnitGroupsWithAssignmentsDTO = {
   name: string;
   idUnitGroup: number;
   baseUnit: { name: string; idUnit: number } | null;
-}[];
+};
