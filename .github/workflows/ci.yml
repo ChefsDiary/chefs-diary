@@ -30,6 +30,9 @@ jobs:
       - name: Spuštění linteru
         run: pnpm lint
 
+      - name: Vygenerování Prisma klienta
+        run: pnpm prisma generate
+
       # - name: Spuštění testů
       # run: pnpm test --passWithNoTests
 
