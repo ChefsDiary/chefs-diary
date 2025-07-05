@@ -27,14 +27,14 @@ jobs:
       - name: Instalace závislostí
         run: pnpm install
 
+      - name: Vygenerování Prisma klienta
+        run: npx prisma generate
+
       - name: Spuštění linteru
         run: pnpm lint
 
       - name: Kontrola typů
         run: pnpm type-check
-
-      - name: Vygenerování Prisma klienta
-        run: npx prisma generate
 
       - name: Debug versions
         run: |
