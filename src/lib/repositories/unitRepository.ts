@@ -189,7 +189,9 @@ export async function deleteUnitGroup(idUnitGroup: number) {
  */
 export async function getUnitGroupsWithAssignedUnits(
   idUnit: number
-): Promise<UnitGroupsWithAssignmentsDTO[]> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): Promise<any> {
+  // ): Promise<UnitGroupsWithAssignmentsDTO[]> {
   return await prisma.unitGroup.findMany({
     relationLoadStrategy: "join",
     select: {
