@@ -1,7 +1,7 @@
 import { Unit, UnitGroup } from "@prisma/client";
 
 import { prisma } from "../../config/prisma/prisma";
-import { UnitGroupsWithAssignmentsDTO } from "../dTOs/admin/UnitGroupWithAssignmentsDTO";
+// import { UnitGroupsWithAssignmentsDTO } from "../dTOs/admin/UnitGroupWithAssignmentsDTO";
 import { UnitGroupWithDetailDTO } from "../dTOs/admin/UnitGroupWithDetailDTO";
 import { UnitWithGroupInfoDTO } from "../dTOs/admin/UnitWithGroupInfoDTO";
 import { PaginatedDTO } from "../dTOs/shared/PaginatedDTO";
