@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack --experimental-https",
-    "build": "next build",
     "build:devel": "npx dotenv-cli -e .env.development next build",
     "build:prod": "npx dotenv-cli -e .env.prod next build",
+    "build:ci": "next build",
     "start": "next start",
     "lint": "next lint",
+    "type-check": "tsc --noEmit",
     "prisma:generate": "npx prisma generate",
     "prisma:db_push": "npx dotenv-cli -e .env.migrate prisma db push",
     "prisma:migrate": "npx dotenv-cli -e .env.migrate prisma migrate dev",

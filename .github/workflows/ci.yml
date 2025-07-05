@@ -21,7 +21,7 @@ jobs:
       - name: Nastavení Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: "22.9.0"
           cache: "pnpm"
 
       - name: Instalace závislostí
@@ -29,6 +29,9 @@ jobs:
 
       - name: Spuštění linteru
         run: pnpm lint
+
+      - name: Kontrola typů
+        run: pnpm type-check
 
       - name: Vygenerování Prisma klienta
         run: npx prisma generate
@@ -38,11 +41,6 @@ jobs:
           node --version
           npm --version
           npx prisma --version
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22.9"
 
       # - name: Spuštění testů
       # run: pnpm test --passWithNoTests
