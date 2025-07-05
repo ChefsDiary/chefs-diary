@@ -1,7 +1,7 @@
 import { Unit, UnitGroup } from "@prisma/client";
 
 import { prisma } from "../../config/prisma/prisma";
-import { UnitGroupsWithAssignmentsDTO } from "../dTOs/admin/UnitGroupWithAssignmentsDTO";
+// import { UnitGroupsWithAssignmentsDTO } from "../dTOs/admin/UnitGroupWithAssignmentsDTO";
 import { UnitGroupWithDetailDTO } from "../dTOs/admin/UnitGroupWithDetailDTO";
 import { UnitWithGroupInfoDTO } from "../dTOs/admin/UnitWithGroupInfoDTO";
 import { PaginatedDTO } from "../dTOs/shared/PaginatedDTO";
@@ -189,7 +189,9 @@ export async function deleteUnitGroup(idUnitGroup: number) {
  */
 export async function getUnitGroupsWithAssignedUnits(
   idUnit: number
-): Promise<UnitGroupsWithAssignmentsDTO[]> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): Promise<any> {
+  // ): Promise<UnitGroupsWithAssignmentsDTO[]> {
   return await prisma.unitGroup.findMany({
     relationLoadStrategy: "join",
     select: {
