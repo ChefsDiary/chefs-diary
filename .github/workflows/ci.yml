@@ -28,7 +28,7 @@ jobs:
         run: pnpm install
 
       - name: Vygenerování Prisma klienta
-        run: npx prisma generate
+        run: pnpm prisma:generate
 
       - name: Spuštění linteru
         run: pnpm lint
@@ -36,14 +36,8 @@ jobs:
       - name: Kontrola typů
         run: pnpm type-check
 
-      - name: Debug versions
-        run: |
-          node --version
-          npm --version
-          npx prisma --version
-
       # - name: Spuštění testů
       # run: pnpm test --passWithNoTests
 
       - name: Build projektu
-        run: pnpm build
+        run: pnpm build:ci
