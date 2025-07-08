@@ -11,6 +11,7 @@ jobs:
 
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      NEXT_PUBLIC_IMAGE_KIT_LINK: ${{ secrets.NEXT_PUBLIC_IMAGE_KIT_LINK }}
 
     steps:
       - name: Checkout kódu
