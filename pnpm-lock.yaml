@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@auth/prisma-adapter':
-        specifier: ^2.9.1
-        version: 2.9.1(@prisma/client@6.8.2(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))(nodemailer@6.10.1)
+        specifier: ^2.10.0
+        version: 2.10.0(@prisma/client@6.11.1(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))(nodemailer@6.10.1)
       '@heroui/system':
         specifier: ^2.4.17
         version: 2.4.17(@heroui/theme@2.4.17(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.15.19)(typescript@5.8.3))))(framer-motion@12.12.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -46,17 +46,17 @@ importers:
         specifier: ^2.7.10
         version: 2.7.10(@types/react@19.1.8)(framer-motion@12.12.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.15.19)(typescript@5.8.3)))
       '@prisma/client':
-        specifier: ^6.8.2
-        version: 6.8.2(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3)
+        specifier: ^6.11.1
+        version: 6.11.1(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3)
       '@prisma/extension-accelerate':
-        specifier: ^2.0.0
-        version: 2.0.0(@prisma/client@6.8.2(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))
+        specifier: ^2.0.1
+        version: 2.0.1(@prisma/client@6.11.1(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))
       '@prisma/extension-optimize':
         specifier: ^2.0.0
-        version: 2.0.0(@prisma/client@6.8.2(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))
+        version: 2.0.0(@prisma/client@6.11.1(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))
       '@prisma/instrumentation':
-        specifier: ^6.9.0
-        version: 6.9.0(@opentelemetry/api@1.9.0)
+        specifier: ^6.11.1
+        version: 6.11.1(@opentelemetry/api@1.9.0)
       '@tailwindcss/postcss':
         specifier: ^4.1.4
         version: 4.1.6
@@ -166,8 +166,22 @@ packages:
       nodemailer:
         optional: true
 
-  '@auth/prisma-adapter@2.9.1':
-    resolution: {integrity: sha512-0ZfjOPt3Ci8yx8SMCydAuBAjR/exI/8SAr6JDVYtqDFhm0JaV1XuHYgEzgzXZZfW2+WKC29LowCWxdCjoAz9kQ==}
+  '@auth/core@0.40.0':
+    resolution: {integrity: sha512-n53uJE0RH5SqZ7N1xZoMKekbHfQgjd0sAEyUbE+IYJnmuQkbvuZnXItCU7d+i7Fj8VGOgqvNO7Mw4YfBTlZeQw==}
+    peerDependencies:
+      '@simplewebauthn/browser': ^9.0.1
+      '@simplewebauthn/server': ^9.0.2
+      nodemailer: ^6.8.0
+    peerDependenciesMeta:
+      '@simplewebauthn/browser':
+        optional: true
+      '@simplewebauthn/server':
+        optional: true
+      nodemailer:
+        optional: true
+
+  '@auth/prisma-adapter@2.10.0':
+    resolution: {integrity: sha512-EliOQoTjGK87jWWqnJvlQjbR4PjQZQqtwRwPAe108WwT9ubuuJJIrL68aNnQr4hFESz6P7SEX2bZy+y2yL37Gw==}
     peerDependencies:
       '@prisma/client': '>=2.26.0 || >=3 || >=4 || >=5 || >=6'
 
@@ -1163,8 +1177,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@prisma/client@6.8.2':
-    resolution: {integrity: sha512-5II+vbyzv4si6Yunwgkj0qT/iY0zyspttoDrL3R4BYgLdp42/d2C8xdi9vqkrYtKt9H32oFIukvyw3Koz5JoDg==}
+  '@prisma/client@6.11.1':
+    resolution: {integrity: sha512-5CLFh8QP6KxRm83pJ84jaVCeSVPQr8k0L2SEtOJHwdkS57/VQDcI/wQpGmdyOZi+D9gdNabdo8tj1Uk+w+upsQ==}
     engines: {node: '>=18.18'}
     peerDependencies:
       prisma: '*'
@@ -1187,8 +1201,8 @@ packages:
   '@prisma/engines@6.9.0':
     resolution: {integrity: sha512-im0X0bwDLA0244CDf8fuvnLuCQcBBdAGgr+ByvGfQY9wWl6EA+kRGwVk8ZIpG65rnlOwtaWIr/ZcEU5pNVvq9g==}
 
-  '@prisma/extension-accelerate@2.0.0':
-    resolution: {integrity: sha512-8phE1FQ/sqNQM5VRnWog2jp3r+/acffIJR1D7QHPk8d/WHdKUyLhIVSKnd1Gq+5orwzzW2I0O16gvb6Uzp0PRw==}
+  '@prisma/extension-accelerate@2.0.1':
+    resolution: {integrity: sha512-KSQlLC5F1qxFQCqSP8SnCwhkv9SE40v8WR+UjHdRce0R7Fv/K3IfJJNANGFx5MNoOypK1VN6wfvRr6CNA/l+BQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@prisma/client': '>=4.16.1'
@@ -1206,6 +1220,11 @@ packages:
 
   '@prisma/instrumentation@5.19.1':
     resolution: {integrity: sha512-VLnzMQq7CWroL5AeaW0Py2huiNKeoMfCH3SUxstdzPrlWQi6UQ9UrfcbUkNHlVFqOMacqy8X/8YtE0kuKDpD9w==}
+
+  '@prisma/instrumentation@6.11.1':
+    resolution: {integrity: sha512-mrZOev24EDhnefmnZX7WVVT7v+r9LttPRqf54ONvj6re4XMF7wFTpK2tLJi4XHB7fFp/6xhYbgRel8YV7gQiyA==}
+    peerDependencies:
+      '@opentelemetry/api': ^1.8
 
   '@prisma/instrumentation@6.9.0':
     resolution: {integrity: sha512-HFfr89v7WEbygdTzh1t171SUMYlkFRTXf48QthDc1cKduEsGIsOdt1QhOlpF7VK+yMg9EXHaXQo5Z8lQ7WtEYA==}
@@ -3947,10 +3966,20 @@ snapshots:
     optionalDependencies:
       nodemailer: 6.10.1
 
-  '@auth/prisma-adapter@2.9.1(@prisma/client@6.8.2(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))(nodemailer@6.10.1)':
+  '@auth/core@0.40.0(nodemailer@6.10.1)':
     dependencies:
-      '@auth/core': 0.39.1(nodemailer@6.10.1)
-      '@prisma/client': 6.8.2(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3)
+      '@panva/hkdf': 1.2.1
+      jose: 6.0.11
+      oauth4webapi: 3.5.1
+      preact: 10.24.3
+      preact-render-to-string: 6.5.11(preact@10.24.3)
+    optionalDependencies:
+      nodemailer: 6.10.1
+
+  '@auth/prisma-adapter@2.10.0(@prisma/client@6.11.1(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))(nodemailer@6.10.1)':
+    dependencies:
+      '@auth/core': 0.40.0(nodemailer@6.10.1)
+      '@prisma/client': 6.11.1(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3)
     transitivePeerDependencies:
       - '@simplewebauthn/browser'
       - '@simplewebauthn/server'
@@ -5460,7 +5489,7 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@prisma/client@6.8.2(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3)':
+  '@prisma/client@6.11.1(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3)':
     optionalDependencies:
       prisma: 6.9.0(typescript@5.8.3)
       typescript: 5.8.3
@@ -5480,11 +5509,11 @@ snapshots:
       '@prisma/fetch-engine': 6.9.0
       '@prisma/get-platform': 6.9.0
 
-  '@prisma/extension-accelerate@2.0.0(@prisma/client@6.8.2(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))':
+  '@prisma/extension-accelerate@2.0.1(@prisma/client@6.11.1(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))':
     dependencies:
-      '@prisma/client': 6.8.2(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3)
+      '@prisma/client': 6.11.1(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3)
 
-  '@prisma/extension-optimize@2.0.0(@prisma/client@6.8.2(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))':
+  '@prisma/extension-optimize@2.0.0(@prisma/client@6.11.1(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3))':
     dependencies:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/context-async-hooks': 1.30.1(@opentelemetry/api@1.9.0)
@@ -5492,7 +5521,7 @@ snapshots:
       '@opentelemetry/resources': 1.30.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/sdk-trace-base': 1.30.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/semantic-conventions': 1.22.0
-      '@prisma/client': 6.8.2(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3)
+      '@prisma/client': 6.11.1(prisma@6.9.0(typescript@5.8.3))(typescript@5.8.3)
       '@prisma/debug': 6.9.0
       kleur: 4.1.5
       prisma-instrumentation-5-x: '@prisma/instrumentation@5.19.1'
@@ -5516,6 +5545,13 @@ snapshots:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/instrumentation': 0.52.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/sdk-trace-base': 1.30.1(@opentelemetry/api@1.9.0)
+    transitivePeerDependencies:
+      - supports-color
+
+  '@prisma/instrumentation@6.11.1(@opentelemetry/api@1.9.0)':
+    dependencies:
+      '@opentelemetry/api': 1.9.0
+      '@opentelemetry/instrumentation': 0.57.2(@opentelemetry/api@1.9.0)
     transitivePeerDependencies:
       - supports-color
 
