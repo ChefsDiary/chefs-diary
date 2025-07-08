@@ -293,6 +293,16 @@ export async function getAllUsersPaginated(
           },
         }
       : undefined;
+  const where = isFilterValue
+    ? {
+        userInfo: {
+          OR: [
+            { email: { search: filterValue } },
+            { userName: { search: filterValue } },
+          ],
+        },
+      }
+    : undefined;
 
   const [users, totalCount] = await Promise.all([
     prisma.user
@@ -306,26 +316,7 @@ export async function getAllUsersPaginated(
         skip,
         take: pageSize,
         orderBy,
-        where: isFilterValue
-          ? {
-              userInfo: {
-                OR: [
-                  {
-                    email: {
-                      contains: filterValue,
-                      mode: "insensitive",
-                    },
-                  },
-                  {
-                    userName: {
-                      contains: filterValue,
-                      mode: "insensitive",
-                    },
-                  },
-                ],
-              },
-            }
-          : undefined,
+        where,
         select: {
           idUser: true,
           isDisabled: true,

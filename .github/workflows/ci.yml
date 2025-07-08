@@ -9,6 +9,10 @@ jobs:
     name: Test + Lint + Build
     runs-on: ubuntu-latest
 
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      NEXT_PUBLIC_IMAGE_KIT_LINK: ${{ secrets.NEXT_PUBLIC_IMAGE_KIT_LINK }}
+
     steps:
       - name: Checkout kódu
         uses: actions/checkout@v4
@@ -28,7 +32,7 @@ jobs:
         run: pnpm install
 
       - name: Vygenerování Prisma klienta
-        run: npx prisma generate
+        run: pnpm prisma:generate
 
       - name: Spuštění linteru
         run: pnpm lint
@@ -36,14 +40,8 @@ jobs:
       - name: Kontrola typů
         run: pnpm type-check
 
-      - name: Debug versions
-        run: |
-          node --version
-          npm --version
-          npx prisma --version
-
       # - name: Spuštění testů
       # run: pnpm test --passWithNoTests
 
       - name: Build projektu
-        run: pnpm build
+        run: pnpm build:ci
