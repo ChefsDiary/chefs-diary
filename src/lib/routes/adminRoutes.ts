@@ -6,6 +6,7 @@ const adminRoutes = {
   UserProfile: "/admin/profil-uzivatele",
   UnitGroups: "/admin/skupiny-jednotek",
   Units: "/admin/jednotky",
+  IngredientGroups: "/admin/skupiny-ingredienci",
   Ingredients: "/admin/ingredience",
 } as const;
 

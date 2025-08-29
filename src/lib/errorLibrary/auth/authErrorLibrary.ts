@@ -52,6 +52,9 @@ const errorTexts: ErrorLibraryType = {
   unitGroupNameRequired: "Název skupiny jednotek je povinný",
   unitGroupNameMaxLength:
     "Název skupiny jednotek může obsahovat maximálně {0} znak",
+  ingredientGroupNameRequired: "Název skupiny ingrediencí je povinný",
+  ingredientGroupNameMaxLength:
+    "Název skupiny ingrediencí může obsahovat maximálně {0} znak",
 };
 
 const getErrorTextByKey = (key: keyof ErrorLibraryType, ...args: string[]) => {

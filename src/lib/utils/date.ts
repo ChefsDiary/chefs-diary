@@ -53,3 +53,7 @@ export const isDateEqual = (
 
   return isEqual(newDateA, newDateB);
 };
+
+export const getActualTime = (): number => {
+  return new Date().getTime();
+};

@@ -1,15 +1,15 @@
-import TableSettingsType from "../types/common/TableSettingsType";
+import { TableSettings } from "../types/common/table";
 
 export function loadTableSettings(
   gridName: string,
-  defaultValue: TableSettingsType = {
+  defaultValue: TableSettings = {
     page: 1,
     pageSize: 10,
     filterValue: "",
     visibleColumns: new Set([]),
     sortDescriptor: { column: "", direction: "ascending" },
   }
-): TableSettingsType {
+): TableSettings {
   if (typeof window === "undefined") return defaultValue;
 
   try {
@@ -26,10 +26,7 @@ export function loadTableSettings(
   }
 }
 
-export function saveTableSettings(
-  gridName: string,
-  settings: TableSettingsType
-) {
+export function saveTableSettings(gridName: string, settings: TableSettings) {
   if (typeof window === "undefined") return;
 
   try {

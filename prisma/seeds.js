@@ -302,6 +302,7 @@ async function main() {
       description: "Spravovat nastavení systému",
     },
   });
+
   const unitView = await prisma.permission.upsert({
     where: { code: "UNIT_VIEW" },
     update: {
@@ -339,6 +340,43 @@ async function main() {
     },
   });
 
+  const ingredientView = await prisma.permission.upsert({
+    where: { code: "INGREDIENT_VIEW" },
+    update: {
+      value: 120,
+      description: "Zobrazit ingredience",
+    },
+    create: {
+      code: "INGREDIENT_VIEW",
+      value: 120,
+      description: "Zobrazit ingredience",
+    },
+  });
+  const ingredientEdit = await prisma.permission.upsert({
+    where: { code: "INGREDIENT_EDIT" },
+    update: {
+      value: 121,
+      description: "Spravovat ingrediencí",
+    },
+    create: {
+      code: "INGREDIENT_EDIT",
+      value: 121,
+      description: "Spravovat ingrediencí",
+    },
+  });
+  const ingredientDelete = await prisma.permission.upsert({
+    where: { code: "INGREDIENT_DELETE" },
+    update: {
+      value: 122,
+      description: "Mazat ingredience",
+    },
+    create: {
+      code: "INGREDIENT_DELETE",
+      value: 122,
+      description: "Mazat ingredience",
+    },
+  });
+
   console.log({
     userView,
     userEdit,
@@ -361,6 +399,9 @@ async function main() {
     unitView,
     unitEdit,
     unitDelete,
+    ingredientView,
+    ingredientEdit,
+    ingredientDelete,
   });
 
   // Vytváření RolePermission a přiřazení pro každou roli
@@ -389,6 +430,9 @@ async function main() {
       unitView.code,
       unitEdit.code,
       unitDelete.code,
+      ingredientView.code,
+      ingredientEdit.code,
+      ingredientDelete.code,
     ],
     ADMIN: [
       userView.code,
@@ -401,6 +445,9 @@ async function main() {
       unitView.code,
       unitEdit.code,
       unitDelete.code,
+      ingredientView.code,
+      ingredientEdit.code,
+      ingredientDelete.code,
     ],
     MODERATOR: [
       postApprove.code,
@@ -408,8 +455,14 @@ async function main() {
       commentDelete.code,
       recipeDelete.code,
       unitView.code,
+      ingredientView.code,
     ],
-    SUPPORT: [ticketView.code, ticketManage.code, unitView.code],
+    SUPPORT: [
+      ticketView.code,
+      ticketManage.code,
+      unitView.code,
+      ingredientView.code,
+    ],
     EDITOR: [
       recipePublish.code,
       recipeEdit.code,
@@ -419,7 +472,7 @@ async function main() {
       commentPublish.code,
       ratingPublish.code,
     ],
-    AUDITOR: [userView.code, logView.code, unitView.code],
+    AUDITOR: [userView.code, logView.code, unitView.code, ingredientView.code],
   };
 
   for (const [roleCode, permissionCodes] of Object.entries(rolePermissionMap)) {

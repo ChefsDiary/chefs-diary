@@ -44,7 +44,8 @@ export const useValidateInput = <T extends object>({
 
     const normalizedValue = normalizeValue(initialValue);
     setLocalValue(normalizedValue);
-  }, [initialValue, isFirstRender]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialValue]);
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {

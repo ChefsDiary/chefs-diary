@@ -10,7 +10,7 @@ import {
 
 import { ADMIN_UNITS_GRID_NAME } from "@/lib/constants/gridNames";
 import useIsFirstRender from "@/lib/hooks/useIsFirstRender";
-import TableSettingsType from "@/lib/types/common/TableSettingsType";
+import { TableSettings } from "@/lib/types/common/table";
 import {
   loadTableSettings,
   saveTableSettings,
@@ -35,7 +35,7 @@ type Props = {
 export function UnitsTableContextProvider({ children }: Props) {
   const firstRender = useIsFirstRender();
 
-  const defaultSettings: TableSettingsType = {
+  const defaultSettings: TableSettings = {
     page: 1,
     pageSize: 10,
     sortDescriptor: { column: "", direction: "ascending" },

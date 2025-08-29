@@ -8,13 +8,13 @@ type Props<T> = {
 };
 
 export default function EvaluateActionResponseError<T>({ data }: Props<T>) {
-  const lastShownTimeRef = useRef<Date | null>(null);
+  const lastShownTimeRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (
       !data.success &&
       typeof data.error === "string" &&
-      lastShownTimeRef.current?.getTime() !== data.timeStamp.getTime()
+      lastShownTimeRef.current !== data.timeStamp
     ) {
       addToast("Chyba", data.error, "danger");
       lastShownTimeRef.current = data.timeStamp;

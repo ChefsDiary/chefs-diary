@@ -1,17 +1,17 @@
 import { Selection, SortDescriptor } from "@heroui/react";
 
-import TableColumnType from "../types/common/TableColumnType";
+import { TableColumn } from "../types/common/table";
 
 /**
  * Get visible columns
  * @param visibleColumns
  * @param columns
- * @returns {TableColumnType[]}
+ * @returns {TableColumn[]}
  */
 export function getVisibleColumns(
   visibleColumns: Selection,
-  columns: TableColumnType[]
-): TableColumnType[] {
+  columns: TableColumn[]
+): TableColumn[] {
   if (visibleColumns === "all") return columns;
 
   return columns.filter((column) =>

@@ -11,6 +11,7 @@ import PermissionTypeEnum from "../enums/PermissionTypeEnum";
 import ConflictError from "../errors/ConflictError";
 import NotFoundError from "../errors/NotFoundError";
 import { unitRepository } from "../repositories/unitRepository";
+import { getActualTime } from "../utils/date";
 import { getErrorMessageFromError } from "../utils/error";
 import { getRequireAdminPermissions } from "../utils/server";
 import { logAdminAction } from "./adminLogService";
@@ -101,6 +102,7 @@ export async function attemptDeleteUnitGroup(idUnitGroup: number) {
 export async function getUnitGroupById(
   idUnitGroup: number
 ): Promise<ActionResponseDTO<UnitGroup>> {
+  // TODO: Pro4 tu jako je ActionResponse, kdy6 jsem v service?
   try {
     await getRequireAdminPermissions([PermissionTypeEnum.UNIT_EDIT]);
 
@@ -109,7 +111,7 @@ export async function getUnitGroupById(
     return {
       data: unitGroup,
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
     const errorMessage = getErrorMessageFromError(error);
@@ -118,7 +120,7 @@ export async function getUnitGroupById(
       data: null,
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   }
 }
@@ -266,7 +268,7 @@ export async function getUnitGroupSummaries(): Promise<
     return {
       data: { items: newItems, totalCount },
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
     const errorMessage = getErrorMessageFromError(error);
@@ -275,7 +277,7 @@ export async function getUnitGroupSummaries(): Promise<
       data: { items: [], totalCount: 0 },
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   }
 }
@@ -329,7 +331,7 @@ export async function getUnitWithGroupInfoSummary(): Promise<
     return {
       data: { items: newItems, totalCount },
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
     const errorMessage = getErrorMessageFromError(error);
@@ -338,7 +340,7 @@ export async function getUnitWithGroupInfoSummary(): Promise<
       data: { items: [], totalCount: 0 },
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   }
 }

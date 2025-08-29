@@ -19,6 +19,7 @@ import {
   attemptRemoveUnitFromGroup,
   getUnitGroupDataForModal,
 } from "@/lib/services/unitService";
+import { getActualTime } from "@/lib/utils/date";
 import {
   getConflictErrorFromError,
   getErrorMessageFromError,
@@ -43,7 +44,7 @@ export async function insertUnitGroupAction(
         data: null,
         success: false,
         error: validationResult.error,
-        timeStamp: new Date(),
+        timeStamp: getActualTime(),
       };
     }
 
@@ -53,7 +54,7 @@ export async function insertUnitGroupAction(
     return {
       data: unitGroup,
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
     const conflictError = getConflictErrorFromError(
@@ -70,7 +71,7 @@ export async function insertUnitGroupAction(
       data: null,
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } finally {
     revalidatePath(adminRoutes.UnitGroups);
@@ -91,7 +92,7 @@ export async function updateUnitGroupAction(
         data: null,
         success: false,
         error: validationResult.error,
-        timeStamp: new Date(),
+        timeStamp: getActualTime(),
       };
     }
 
@@ -102,7 +103,7 @@ export async function updateUnitGroupAction(
     return {
       data: unitGroup,
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
     const notFoundError = getNotFoundErrorFromError(
@@ -119,7 +120,7 @@ export async function updateUnitGroupAction(
       data: null,
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } finally {
     revalidatePath(adminRoutes.UnitGroups);
@@ -137,16 +138,16 @@ export async function deleteUnitGroupAction(
     return {
       data: null,
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
-    const conflictError = getNotFoundErrorFromError(
+    const notFoundError = getNotFoundErrorFromError(
       error,
       "Skupina jednotek nelze smazat"
     );
-    let errorMessage = conflictError.errorMessage;
+    let errorMessage = notFoundError.errorMessage;
 
-    if (!conflictError.isNotFoundError) {
+    if (!notFoundError.isNotFoundError) {
       errorMessage = getErrorMessageFromError(error);
     }
 
@@ -154,7 +155,7 @@ export async function deleteUnitGroupAction(
       data: null,
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } finally {
     revalidatePath(adminRoutes.UnitGroups);
@@ -174,7 +175,7 @@ export async function insertUnitAction(
         data: null,
         success: false,
         error: validationResult.error,
-        timeStamp: new Date(),
+        timeStamp: getActualTime(),
       };
     }
 
@@ -184,7 +185,7 @@ export async function insertUnitAction(
     return {
       data: unit,
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
     const conflictError = getConflictErrorFromError(
@@ -201,7 +202,7 @@ export async function insertUnitAction(
       data: null,
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } finally {
     revalidatePath(adminRoutes.Units);
@@ -222,7 +223,7 @@ export async function updateUnitAction(
         data: null,
         success: false,
         error: validationResult.error,
-        timeStamp: new Date(),
+        timeStamp: getActualTime(),
       };
     }
 
@@ -233,7 +234,7 @@ export async function updateUnitAction(
     return {
       data: unit,
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
     const notFoundError = getNotFoundErrorFromError(
@@ -250,7 +251,7 @@ export async function updateUnitAction(
       data: null,
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } finally {
     revalidatePath(adminRoutes.Units);
@@ -268,7 +269,7 @@ export async function deleteUnitAction(
     return {
       data: null,
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
     const conflictError = getNotFoundErrorFromError(
@@ -285,7 +286,7 @@ export async function deleteUnitAction(
       data: null,
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } finally {
     revalidatePath(adminRoutes.Units);
@@ -303,7 +304,7 @@ export async function getUnitGroupDataForModalAction(
     return {
       data: data,
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
     const conflictError = getConflictErrorFromError(
@@ -320,7 +321,7 @@ export async function getUnitGroupDataForModalAction(
       data: null,
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   }
 }
@@ -344,7 +345,7 @@ export async function addUnitToGroupAction(
     return {
       data: null,
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
     const notFoundError = getNotFoundErrorFromError(
@@ -361,7 +362,7 @@ export async function addUnitToGroupAction(
       data: null,
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } finally {
     revalidatePath(adminRoutes.Units);
@@ -380,7 +381,7 @@ export async function removeUnitFromGroupAction(
     return {
       data: null,
       success: true,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } catch (error) {
     const notFoundError = getNotFoundErrorFromError(
@@ -397,7 +398,7 @@ export async function removeUnitFromGroupAction(
       data: null,
       success: false,
       error: errorMessage,
-      timeStamp: new Date(),
+      timeStamp: getActualTime(),
     };
   } finally {
     revalidatePath(adminRoutes.Units);

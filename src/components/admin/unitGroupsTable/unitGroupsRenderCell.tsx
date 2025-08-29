@@ -1,6 +1,6 @@
 import { Key } from "react";
 
-import TableCellActions from "@/components/shared/tableCellActions/TableCellActions";
+import TableCellActions from "@/components/shared/table/cells/TableCellActions";
 import { UnitGroupSummaries } from "@/lib/dTOs/admin/UnitGroupSummariesDTO";
 
 type UnitGroupActions = keyof UnitGroupSummaries | "actions";

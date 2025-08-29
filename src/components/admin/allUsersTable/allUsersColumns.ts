@@ -1,6 +1,6 @@
-import TableColumnType from "@/lib/types/common/TableColumnType";
+import { TableColumn } from "@/lib/types/common/table";
 
-const allUsersColumns: TableColumnType[] = [
+const allUsersColumns: TableColumn[] = [
   {
     label: "Uživatelské jméno",
     key: "userName",

@@ -58,14 +58,20 @@ const adminMenuItems: AdminMenuItemType[] = [
   {
     key: "ingredients-group",
     label: "Ingredience",
-    permissions: [PermissionTypeEnum.UNIT_VIEW],
-    icon: "FaDatabase",
+    permissions: [PermissionTypeEnum.INGREDIENT_VIEW],
+    icon: "FaPlateWheat",
     subitems: [
+      {
+        key: "ingredient-groups",
+        label: "Skupiny ingrediencí",
+        link: adminRoutes.IngredientGroups,
+        permissions: [PermissionTypeEnum.INGREDIENT_VIEW],
+      },
       {
         key: "ingredients",
         label: "Ingredience",
         link: adminRoutes.Ingredients,
-        permissions: [],
+        permissions: [PermissionTypeEnum.INGREDIENT_VIEW],
       },
     ],
   },

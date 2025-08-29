@@ -20,6 +20,9 @@ enum PermissionTypeEnum {
   UNIT_VIEW = 110,
   UNIT_EDIT = 111,
   UNIT_DELETE = 112,
+  INGREDIENT_VIEW = 120,
+  INGREDIENT_EDIT = 121,
+  INGREDIENT_DELETE = 122,
 }
 
 export default PermissionTypeEnum;

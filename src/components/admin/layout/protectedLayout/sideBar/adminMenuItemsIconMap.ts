@@ -1,4 +1,9 @@
-import { FaDatabase, FaUnity, FaUserLarge } from "react-icons/fa6";
+import {
+  FaDatabase,
+  FaPlateWheat,
+  FaUnity,
+  FaUserLarge,
+} from "react-icons/fa6";
 import { RiDashboardFill } from "react-icons/ri";
 
 const adminMenuItemsIconMap = {
@@ -6,6 +11,7 @@ const adminMenuItemsIconMap = {
   FaUserLarge,
   FaUnity,
   FaDatabase,
+  FaPlateWheat,
 };
 
 export type AdminMenuItemsIconMapType = keyof typeof adminMenuItemsIconMap;

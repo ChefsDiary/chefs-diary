@@ -1,7 +1,7 @@
 import { Key } from "react";
 import { IoIosAddCircle } from "react-icons/io";
 
-import TableCellActions from "@/components/shared/tableCellActions/TableCellActions";
+import TableCellActions from "@/components/shared/table/cells/TableCellActions";
 import { UnitWithGroupInfoSummaryDTO } from "@/lib/dTOs/admin/UnitWithGroupInfoSummaryDTO";
 
 type WithActionsActions = keyof UnitWithGroupInfoSummaryDTO | "actions";

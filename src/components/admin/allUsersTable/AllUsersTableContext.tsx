@@ -10,7 +10,7 @@ import {
 
 import { ADMIN_ALL_USERS_GRID_NAME } from "@/lib/constants/gridNames";
 import useIsFirstRender from "@/lib/hooks/useIsFirstRender";
-import TableSettingsType from "@/lib/types/common/TableSettingsType";
+import { TableSettings } from "@/lib/types/common/table";
 import {
   loadTableSettings,
   saveTableSettings,
@@ -43,7 +43,7 @@ type Props = {
 export function AllUsersTableContextProvider({ children }: Props) {
   const firstRender = useIsFirstRender();
 
-  const defaultSettings: TableSettingsType = {
+  const defaultSettings: TableSettings = {
     page: 1,
     pageSize: 10,
     filterValue: "",

@@ -1,9 +1,9 @@
 import { Key } from "react";
 
-import TableCellActions from "@/components/shared/tableCellActions/TableCellActions";
-import TableCellBoolean from "@/components/shared/tableCellBoolean/TableCellBoolean";
-import TableCellDate from "@/components/shared/tableCellDate/TableCellDate";
-import TableCellUser from "@/components/shared/tableCellUser/TableCellUser";
+import TableCellActions from "@/components/shared/table/cells/TableCellActions";
+import TableCellBoolean from "@/components/shared/table/cells/TableCellBoolean";
+import TableCellDate from "@/components/shared/table/cells/TableCellDate";
+import TableCellUser from "@/components/shared/table/cells/TableCellUser";
 import UserWithStatsDTO from "@/lib/dTOs/admin/UserWithStatsDTO";
 
 type UserWithStatsActions = keyof UserWithStatsDTO | "actions";

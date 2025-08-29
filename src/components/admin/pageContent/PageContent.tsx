@@ -1,6 +1,6 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes } from "react";
 
-import { mergeStyles } from '@/lib/utils/styles';
+import { mergeStyles } from "@/lib/utils/styles";
 
 type Props = HTMLAttributes<HTMLDivElement> & {};
 

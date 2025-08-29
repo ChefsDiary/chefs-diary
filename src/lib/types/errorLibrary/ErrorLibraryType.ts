@@ -39,7 +39,9 @@ type LibraryTypeProperty =
   | "unitDisplayNameRequired"
   | "unitDisplayNameMaxLength"
   | "unitGroupNameRequired"
-  | "unitGroupNameMaxLength";
+  | "unitGroupNameMaxLength"
+  | "ingredientGroupNameRequired"
+  | "ingredientGroupNameMaxLength";
 
 type ErrorLibraryType = Record<LibraryTypeProperty, string>;
 

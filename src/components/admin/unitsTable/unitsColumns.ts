@@ -1,7 +1,7 @@
-import TableColumnType from "@/lib/types/common/TableColumnType";
+import { TableColumn } from "@/lib/types/common/table";
 
-function getUnitsColumns(canEditOrDelete: boolean): TableColumnType[] {
-  const columns: TableColumnType[] = [
+function getUnitsColumns(canEditOrDelete: boolean): TableColumn[] {
+  const columns: TableColumn[] = [
     {
       label: "Název jednotky",
       key: "name",
